@@ -155,34 +155,19 @@ def iter_mezcla(iter_1, iter_2):
     it1 = iter(iter_1)
     it2 = iter(iter_2)
     try:
-        a = next(it1)
+        elem1 = next(it1)
+        elem2 = next(it2)
+        while True:
+            if elem1 < elem2:
+                yield elem1
+                elem1 = next(it1)
+            else:
+                yield elem2
+                elem2 = next(it2)
     except StopIteration:
-        yield from it2
-        return
-    try:
-        b = next(it2)
-    except StopIteration:
-        yield a
-        yield from it1
-        return
+        yield from chain([elem1], it1, it2, [elem2])
 
-    while True:
-        if a <= b:
-            yield a
-            try:
-                a = next(it1)
-            except StopIteration:
-                yield b
-                yield from it2
-                return
-        else:
-            yield b
-            try:
-                b = next(it2)
-            except StopIteration:
-                yield a
-                yield from it1
-                return 
+
 
 
 
