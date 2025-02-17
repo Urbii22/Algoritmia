@@ -23,8 +23,22 @@ def generador_recurrencia(coeficientes, funcion_adicional, iniciales):
     Debe generar valores indefinidamente, no hay que poner límites.
     Aunque sea una recurrencia, los valores *no* deben calcularse recursivamente.
     """
-    
-    pass
+    seq = list(iniciales)
+    yield from seq
+
+    orden = len(coeficientes)
+    n = orden
+
+    while True:
+        valor = 0
+        for i in range(orden):
+            valor += coeficientes[i] * seq[n - 1 - i]
+        valor += funcion_adicional(n)
+        seq.append(valor)
+        yield valor
+        n += 1
+
+
 
 class RecurrenciaMaestra: 
     """
@@ -44,8 +58,13 @@ class RecurrenciaMaestra:
         aparecen en la fórmula aT(n/b)+n^k. El parámetro inicial es el valor
         para T(0).
         """
-        
-        pass
+
+        self.a = a
+        self.b = b
+        self.k = k
+        self.inicial = inicial
+
+
         
     def metodo_maestro(self):
         """
@@ -53,8 +72,20 @@ class RecurrenciaMaestra:
         método maestro. La salida está en el formato "O(n^x)" o "O(n^x*log(n))",
         siendo x un número.
         """
-        
-        pass
+        if self.a > 0 and self.b > 1:
+            x = log(self.a, self.b)
+        else:
+            x = 0
+
+        if self.a < self.b ** self.k :
+            return f"O(n^{x})"
+        elif self.a == self.b ** self.k:
+            return f"O(n^{self.k}*log(n))"
+        elif self.a > self.b ** self.k:
+            return f"O(n^{self.k})"
+
+
+
        
     def __iter__(self):
         """
@@ -63,5 +94,24 @@ class RecurrenciaMaestra:
         Aunque sea una recurrencia, los valores *no* deben calcularse 
         recursivamente.
         """
-        
-        pass     
+    pass
+
+    def __eq__(self, other):
+        if not isinstance(other, RecurrenciaMaestra):
+            return NotImplemented
+        return (self.a == other.a and self.b == other.b and
+                self.k == other.k and self.inicial == other.inicial)
+
+    def __ne__(self, other):
+        eq = self.__eq__(other)
+        if eq is NotImplemented:
+            return NotImplemented
+        return not eq
+
+    def __str__(self):
+        return f"{self.a}T(n/{self.b})+n^{self.k}"
+
+
+    def __getitem__(self, item):
+
+        pass
