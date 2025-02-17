@@ -39,7 +39,7 @@ def iterador_anidado(elemento):
     elementos de manera recursiva.
     Los valores se deben generar de uno en uno.
     """
-    
+    """
     if isinstance(elemento, (str, bytes)):
         yield elemento
     else:
@@ -50,7 +50,14 @@ def iterador_anidado(elemento):
         else:
             for sub in it:
                 yield from iterador_anidado(sub)
+    """
 
+
+    if not isinstance(elemento, collections.abc.Iterable):
+        yield elemento
+    else:
+        for e in elemento:
+            yield from iterador_anidado(e)
 
 # ### Generador de media móvil
 
@@ -63,7 +70,7 @@ def generador_media_movil(iterable, longitud):
     valores, de los valores del 2º al 4º, de los valores del 3º al 5º...
     Los valores se deben generar de uno en uno.
     """ 
-    
+    """
     from collections import deque
     window = deque()
     total = 0
@@ -73,6 +80,19 @@ def generador_media_movil(iterable, longitud):
         if len(window) == longitud:
             yield total / longitud
             total -= window.popleft()
+    """
+
+    suma = 0
+    ventana=[]
+    for e in iterable:
+        ventana.append(e)
+        suma += e
+        if len(ventana) > longitud:
+            suma -= ventana.pop(0)
+        if len(ventana) == longitud:
+            yield suma/longitud
+
+
 
 
 # ### Iterador Incluido
@@ -83,13 +103,24 @@ def iterador_incluido(itera_1, itera_2):
     incluidos en el mismo orden en los elementos de un segundo iterador o 
     iterable.
     """
-    
+    """
     it2 = iter(itera_2)
     for elem in itera_1:
         for sub in it2:
             if sub == elem:
                 break
         else:
+            return False
+    return True
+    """
+
+    it_1 = iter(itera_1)
+    it_2 = iter(itera_2)
+    for elem in it_1:
+        try:
+            while next(it_2) != elem:
+                pass
+        except StopIteration:
             return False
     return True
 
@@ -107,6 +138,7 @@ def fibonacci_generalizado(k, iniciales = None):
     El valor por defecto de los valores iniciales es 1.
     El espacio de memoria utilizado debería ser O(k)
     """
+    """
     if iniciales is None:
         window = [1] * k
     else:
@@ -121,7 +153,21 @@ def fibonacci_generalizado(k, iniciales = None):
         yield nxt
         window.pop(0)
         window.append(nxt)
+    """
 
+
+
+    if iniciales is None:
+        iniciales = [1] * k
+
+    iniciales = list(iniciales)
+
+    yield from iniciales
+    while True:
+        last = sum(iniciales)
+        iniciales.append(last)
+        iniciales.pop(0)
+        yield last
 
 # ### Iterador repetido
 
@@ -139,9 +185,7 @@ def iter_repetido(itera, repeticiones):
     """
 
     for elem, rep in zip(itera, repeticiones):
-        for _ in range(rep):
-            yield elem
-
+        yield from repeat(elem, rep)
 
 # ### Mezcla de iteradores ordenados
 
@@ -151,7 +195,7 @@ def iter_mezcla(iter_1, iter_2):
     orden, se generan los elementos de ambos de manera ordenada.
     La cantidad de memoria usada debe ser O(1).
     """
-
+    """
     it1 = iter(iter_1)
     it2 = iter(iter_2)
     try:
@@ -166,6 +210,31 @@ def iter_mezcla(iter_1, iter_2):
                 elem2 = next(it2)
     except StopIteration:
         yield from chain([elem1], it1, it2, [elem2])
+    """
+
+
+
+    iter_1 = iter(iter_1)
+    iter_2 = iter(iter_2)
+
+    e1 = next(iter_1, None)
+    e2 = next(iter_2, None)
+
+    while e1 is not None and e2 is not None:
+        if e1 < e2:
+            yield e1
+            e1 = next(iter_1, None)
+        else:
+            yield e2
+            e2 = next(iter_2, None)
+
+    else:
+        if e1 is not None:
+            yield e1
+            yield from iter_1
+        elif e2 is not None:
+            yield e2
+            yield from iter_2
 
 
 
