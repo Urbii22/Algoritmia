@@ -84,7 +84,7 @@ class RecurrenciaMaestra:
         n = len(self._valores)
         while True:
             indice = n // self.b  # División entera
-            # Calcular T(n) = a * T(n//b) + n^k sin funciones auxiliares
+            # Calcular T(n) = a * T(n//b) + n^k
             valor = self.a * self._valores[indice] + (n ** self.k)
             self._valores.append(valor)
             yield valor
