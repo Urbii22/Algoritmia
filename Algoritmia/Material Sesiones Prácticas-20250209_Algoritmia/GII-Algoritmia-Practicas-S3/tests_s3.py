@@ -6,7 +6,7 @@ if len(sys.argv) > 1:
     code = f'from {file_to_test} import dar_la_vuelta, algoritmo_mochila_voraz'
     exec(code)
 else:
-    from soluciones_s3 import dar_la_vuelta, algoritmo_mochila_voraz
+    from alg_s3 import dar_la_vuelta, algoritmo_mochila_voraz
 
 
 class TestDarLaVuelta(unittest.TestCase):

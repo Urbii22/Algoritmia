@@ -7,7 +7,7 @@ if len(sys.argv) > 1:
 
     exec(code)
 else:
-    from alg_s2 import RecurrenciaMaestra, generador_recurrencia
+    from soluciones_s2 import RecurrenciaMaestra, generador_recurrencia
 
 
 class TestGeneradorRecurrencia(unittest.TestCase):
