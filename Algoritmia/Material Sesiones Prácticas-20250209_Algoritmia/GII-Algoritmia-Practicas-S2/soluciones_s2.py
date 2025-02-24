@@ -1,3 +1,5 @@
+import collections
+from logging import setLogRecordFactory
 from math import log
 
 
@@ -76,6 +78,7 @@ class RecurrenciaMaestra:
         No se utilizan métodos auxiliares para el cálculo.
         """
         # Primero se entregan los valores ya calculados
+
         for valor in self._valores:
             yield valor
         n = len(self._valores)
@@ -87,16 +90,41 @@ class RecurrenciaMaestra:
             yield valor
             n += 1
 
+
+    '''    
+        lista_recurrencia = collections.deque([self.inicial])
+        indice  = 1
+        while True:
+            valor = self.a * lista_recurrencia[0] + indice ** self 
+            yield valor
+            lista_recurrencia.append(valor)
+            
+            indice += 1
+            if indice % self.b == 0:
+                lista_recurrencia.popleft()
+    
+    '''
+
     def __getitem__(self, n):
         """
         Permite obtener T(n) usando la notación objeto[n].
         Se calcula iterativamente hasta llegar al valor solicitado.
         """
+
+        '''
+            if n == 0:
+                return self.inicial
+
+            return self.a * self[n // self.b] + n ** self.k
+
+    '''
+
         while len(self._valores) <= n:
             indice = len(self._valores) // self.b
             valor = self.a * self._valores[indice] + ((len(self._valores)) ** self.k)
             self._valores.append(valor)
         return self._valores[n]
+
 
     def __str__(self):
         """
@@ -115,5 +143,7 @@ class RecurrenciaMaestra:
         if eq is NotImplemented:
             return NotImplemented
         return not eq
-
+    '''
+     return not self == other
+    '''
 
