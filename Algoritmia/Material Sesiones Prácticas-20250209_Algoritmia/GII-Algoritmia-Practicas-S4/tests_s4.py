@@ -6,7 +6,8 @@ if len(sys.argv) > 1:
     code = f'from {file_to_test} import *'
     exec(code)
 else:
-    from alg_s4 import *
+    from soluciones_s4 import *
+   # from alg_s4 import
 
 
 def grafo_de_ejemplo():
