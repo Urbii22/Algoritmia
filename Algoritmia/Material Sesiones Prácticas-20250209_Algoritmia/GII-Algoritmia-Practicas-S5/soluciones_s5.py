@@ -8,7 +8,7 @@
 # Para cada clase o función que se pide se proporcionan algunos tests. Las implementaciones deberían superar estos tests.
 
 
-# todo esto lo ha hecho copilot solo, wow
+# todo esto lo ha hecho copilot solo, wow xd
 class Particion:
     """
     Clase que implementa una partición de un conjunto en subconjuntos disjuntos.
