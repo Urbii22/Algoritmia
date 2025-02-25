@@ -1,3 +1,5 @@
+
+
 import unittest
 import sys
 
@@ -6,7 +8,7 @@ if len(sys.argv) > 1:
     code = f'from {file_to_test} import *'
     exec(code)
 else:
-    from alg_s5 import *
+    from soluciones_s5 import *
 
 import random
 
@@ -26,7 +28,7 @@ class TestParticion(unittest.TestCase):
         # Tenemos n subconjuntos
         self.assertEqual(len(p), n)
         
-        # Los elmentos 0, 1, ... n-1 están cada uno en un subconjunto 
+        # Los elementos 0, 1, ... n-1 están cada uno en un subconjunto
         for v in range(n):
             self.assertEqual(p.numero(v), 1)
             self.assertEqual(p[v], v)
