@@ -34,7 +34,7 @@ def algoritmo_mochila_voraz(objetos, peso_soportado):
     Se recibe un diccionario de objetos, cada elemento del diccionario es una tupla (peso, valor)
     y una variable numérica, peso_soportado.
     Seleccionar las claves de los objetos cuya suma del peso no sea mayor que el peso soportado y se 
-    maximice el valor usando un algoritmo voraz. Los objetos no pueden partirse.
+    maximice el valor usando un algoritmo voraz. Los objetos no pueden partirse .
     """
 
     ratios = sorted(objetos.items(), key=lambda item: item[1][1] / item[1][0], reverse=True)
