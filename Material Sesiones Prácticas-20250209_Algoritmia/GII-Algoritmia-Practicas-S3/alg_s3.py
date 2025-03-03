@@ -29,12 +29,12 @@ def dar_la_vuelta(cambio, valores_monedas):
 # Implementa dar la vuelta utilizando las recomendaciones de la diapositiva 5 de la presentación del tema 2 y comprueba si es más rápido que la implementación básica.
 
 
-def algoritmo_mochila_voraz(objetos, peso_soportado):
+def algoritmo_mochila_voraz(objetos, peso_soportado):     #MUY POSIBLE EXAMEN
     """
     Se recibe un diccionario de objetos, cada elemento del diccionario es una tupla (peso, valor)
     y una variable numérica, peso_soportado.
     Seleccionar las claves de los objetos cuya suma del peso no sea mayor que el peso soportado y se 
-    maximice el valor usando un algoritmo voraz. Los objetos no pueden partirse .
+    maximice el valor usando un algoritmo voraz. Los objetos no pueden partirse.
     """
 
     ratios = sorted(objetos.items(), key=lambda item: item[1][1] / item[1][0], reverse=True)
@@ -50,4 +50,31 @@ def algoritmo_mochila_voraz(objetos, peso_soportado):
     return seleccion
 
 
+"""
+SI QUISIERA PARTIR OBJETOS:
 
+objetos = sorted (objetos.items(), key = lambda x: x[1][1] / x[1][0], reverse = True
+peso = 0
+candidatos= {k:0 for k in candidatos}
+for k, (p,v) in objetos:
+    if peso + p <= peso_soportado:
+        candidatos[k] = 1
+        peso +=p
+        valor +=v
+    else:
+        candidatos[k] = (peso_soportado - peso) /p
+        peso += (peso_soportado -peso)
+        break # imposible que quede mas espacio, mochila llena
+return candidatos
+    
+"""
+
+
+
+
+
+"""
+Diferncias entre Alg optimo y aproximado.
+OPTIMO: Encuentra maximo o minimo GLOBAL
+APROXIMADO: Encuentra maximo o minimo LOCAL
+"""
