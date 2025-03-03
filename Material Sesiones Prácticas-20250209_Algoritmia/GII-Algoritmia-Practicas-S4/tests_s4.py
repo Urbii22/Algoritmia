@@ -6,7 +6,7 @@ if len(sys.argv) > 1:
     code = f'from {file_to_test} import *'
     exec(code)
 else:
-    from soluciones_s4 import *
+    from alg_s4 import *
    # from alg_s4 import
 
 
@@ -19,7 +19,7 @@ def grafo_de_ejemplo():
     }
 
 class TestGrafo(unittest.TestCase):
-    def tests_grafo_de_ejemplo(self):
+    def tests_grafo_de_ejemplo1(self):
         g = grafo_de_ejemplo()
         
         self.assertEqual(numero_nodos(g), 4)
@@ -32,7 +32,7 @@ class TestGrafo(unittest.TestCase):
         self.assertEqual(arco(g, 'd', 'b'), None)        
         self.assertEqual(arco(g, 'x', 'y'), None)
 
-    def tests_grafo_de_ejemplo(self):
+    def tests_grafo_de_ejemplo2(self):
         g = grafo_de_ejemplo()
         
         self.assertEqual(numero_nodos(g), 4)
@@ -78,7 +78,7 @@ class TestGrafo(unittest.TestCase):
             self.assertEqual(pesos_adyacentes(g, nodo, salida=False),
                              pesos_entrada)   
 
-    def tests_grafo_de_ejemplo(self):
+    def tests_grafo_de_ejemplo3(self):
         g = grafo_de_ejemplo()
         
         for camino, coste in (
