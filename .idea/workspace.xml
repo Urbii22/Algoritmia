@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12d92948-4638-4154-8266-0d14f41845b4" name="Changes" comment="cambios añadidios en sesion 3">
+    <list default="true" id="12d92948-4638-4154-8266-0d14f41845b4" name="Changes" comment="acabada sesion 4">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Material Sesiones Prácticas-20250209_Algoritmia/GII-Algoritmia-Practicas-S4/alg_s4.py" beforeDir="false" afterPath="$PROJECT_DIR$/Material Sesiones Prácticas-20250209_Algoritmia/GII-Algoritmia-Practicas-S4/alg_s4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Material Sesiones Prácticas-20250209_Algoritmia/GII-Algoritmia-Practicas-S4/tests_s4.py" beforeDir="false" afterPath="$PROJECT_DIR$/Material Sesiones Prácticas-20250209_Algoritmia/GII-Algoritmia-Practicas-S4/tests_s4.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +48,7 @@
     "Python tests.Python tests in tests_s4.py.executor": "Run",
     "Python tests.Python tests in tests_s5.py.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
@@ -64,7 +63,7 @@
   <component name="PyCoverageOptionsProvider">
     <option name="myUseBundledCoveragePy" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python tests.Python tests for tests_s4.TestGrafo">
     <configuration name="Python tests for tests_s4.TestGrafo" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Algoritmia" />
       <option name="ENV_FILES" value="" />
@@ -158,8 +157,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-PY-243.24978.54" />
-        <option value="bundled-python-sdk-91e3b7efe1d4-466328ff949b-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.24978.54" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-PY-243.25659.43" />
+        <option value="bundled-python-sdk-181015f7ab06-4df51de95216-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.25659.43" />
       </set>
     </attachedChunks>
   </component>
@@ -173,6 +172,7 @@
       <updated>1740495447163</updated>
       <workItem from="1740495449870" duration="296000" />
       <workItem from="1740497833693" duration="336000" />
+      <workItem from="1741010249599" duration="52000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <option name="closed" value="true" />
@@ -206,7 +206,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740989685742</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="acabada sesion 4">
+      <option name="closed" value="true" />
+      <created>1741000498931</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1741000498931</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,7 +237,8 @@
     <MESSAGE value="commit" />
     <MESSAGE value="commit xml" />
     <MESSAGE value="cambios añadidios en sesion 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="cambios añadidios en sesion 3" />
+    <MESSAGE value="acabada sesion 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="acabada sesion 4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -243,6 +252,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Algoritmia$.coverage" NAME=" Coverage Results" MODIFIED="1741000004890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Material Sesiones Prácticas-20250209_Algoritmia/GII-Algoritmia-Practicas-S4" />
+    <SUITE FILE_PATH="coverage/Algoritmia$.coverage" NAME=" Coverage Results" MODIFIED="1741000475276" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Material Sesiones Prácticas-20250209_Algoritmia/GII-Algoritmia-Practicas-S4" />
   </component>
 </project>
