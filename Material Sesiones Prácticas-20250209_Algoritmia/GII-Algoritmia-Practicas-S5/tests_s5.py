@@ -8,7 +8,10 @@ if len(sys.argv) > 1:
     code = f'from {file_to_test} import *'
     exec(code)
 else:
-    from soluciones_s5 import *
+    #from soluciones_s5 import *
+    from alg_s5 import *
+
+    
 
 import random
 
