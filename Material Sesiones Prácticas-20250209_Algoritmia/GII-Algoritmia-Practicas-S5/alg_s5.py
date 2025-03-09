@@ -16,7 +16,7 @@ class Particion:
     def __init__(self, iterable):
         """
         Crea una partición con los elementos del iterable.
-        Inicialmente cada elemento forma un subconjunto.
+        Inicialmente, cada elemento forma un subconjunto.
         """
         pass
             
@@ -29,7 +29,7 @@ class Particion:
         """
         Devuelve el número de elementos del subconjunto al que pertenece el 
         elemento k. 
-        Si k es None devuelve el número   de elementos.
+        Si k es None devuelve el número de elementos.
         """
         pass
         

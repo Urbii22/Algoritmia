@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12d92948-4638-4154-8266-0d14f41845b4" name="Changes" comment="acabada sesion 4" />
+    <list default="true" id="12d92948-4638-4154-8266-0d14f41845b4" name="Changes" comment="acabada sesion 4">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,9 +26,12 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/Urbii22/Algoritmia.git&quot;,
-    &quot;accountId&quot;: &quot;14964cc5-bba3-4938-ae5d-37889cc85ca9&quot;
+    &quot;accountId&quot;: &quot;79d9455d-8c9e-4955-9791-597daa349385&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Material Sesiones Prácticas-20250209_Algoritmia/GII-Algoritmia-Practicas-S5/alg_s5.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 0
@@ -55,6 +61,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -172,6 +179,7 @@
       <workItem from="1740497833693" duration="336000" />
       <workItem from="1741010249599" duration="52000" />
       <workItem from="1741280767917" duration="101000" />
+      <workItem from="1741545031860" duration="201000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <option name="closed" value="true" />
