@@ -106,8 +106,6 @@ def kruskal(grafo):
         if p.__getitem__(u) != p.__getitem__(v):
             p.une(u, v)
             arbol[u, v] = peso
-    return arbol
-
 # Sugerencia: Prueba a implementar Kruskal para un grafo que esté en formato de matriz de adyacencia.
 
 # Sugerencia: Compara los tiempos de ejecución del algoritmo de Kruskal con los del algormitmo de Prim.
