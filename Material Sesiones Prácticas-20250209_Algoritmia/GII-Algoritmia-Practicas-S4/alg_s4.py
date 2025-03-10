@@ -135,7 +135,8 @@ def coste_camino(grafo, camino):
 ###################
 # Habiendo creado las funciones anteriores, se pide implementar los siguientes métodos:
 
-def prim(grafo, inicial=None):
+def prim(grafo, inicial=None):  # NO ES DIRIGIDO ya que se usan arboles
+
     """
     Implementa el algoritmo de Prim para obtener el árbol de expansión mínima de un grafo. Devuelve en el formato del grafo el árbol.
 
@@ -171,7 +172,7 @@ def prim(grafo, inicial=None):
     return mst
 
 
-def dijkstra(grafo, inicial):
+def dijkstra(grafo, inicial): # ES DIRIGIDO devuelve el diccionario de caminos
     """
     Implementa el algoritmo de Dijkstra
     Devuelve un diccionario con la distancia mínima desde el nodo inicial a cada uno de los nodos del grafo.
@@ -188,7 +189,7 @@ def dijkstra(grafo, inicial):
             continue
         for vecino, peso in grafo[nodo_actual].items():
             nueva_dist = d + peso
-            if nueva_dist < distancias[vecino]:
+            if nueva_dist < distancias[vecino]: #condición de selección (inversa a prim)
                 distancias[vecino] = nueva_dist
                 predecesores[vecino] = nodo_actual
                 heapq.heappush(cola, (nueva_dist, vecino))
@@ -203,9 +204,10 @@ def obten_camino_minimo(inicial, final, caminos_pre_calculados):
     Si no hay camino, devuelve None.
     """
 
-    if caminos_pre_calculados.get(inicial) != (None, 0):
+    if caminos_pre_calculados[inicial][0] is not None:
         raise Exception("El diccionario de caminos no corresponde al nodo inicial proporcionado.")
-
+    if caminos_pre_calculados[final][1] == float('inf'):
+        return None
     camino = []
     nodo = final
     while nodo is not None:
